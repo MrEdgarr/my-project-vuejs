@@ -1,0 +1,124 @@
+@import "../../../assets/scss/main.scss";
+
+.blog_main {
+    background: #f1f1f1;
+
+    h2 {
+        margin: 0;
+        margin-right: 2rem;
+        white-space: nowrap;
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+    &_content {
+        padding-top: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 2rem;
+        grid-column-gap: 2rem;
+        @include laptop {
+            grid-template-columns: 1fr;
+        }
+        &_items {
+            &_img {
+                position: relative;
+                overflow: hidden;
+                height: 100%;
+                width: 20rem;
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                float: left;
+
+                @include mobile {
+                    width: 15rem;
+                    height: 15rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    object-fit: cover;
+                }
+            }
+
+            &_right_box {
+                padding: 2rem;
+                float: left;
+                width: calc(100% - 20rem);
+
+                background: $white;
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                height: 100%;
+                @include box-shadow;
+                @include mobile {
+                    width: calc(100% - 15rem);
+                    max-height: 15rem;
+                }
+
+                h2 {
+                    font-weight: 700;
+                    color: $black;
+                    font-size: 2rem;
+                    @include mobile {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                h3 {
+                    color: $violet-light-1;
+                    font-size: 1.6rem;
+                    padding: 1rem 0;
+                }
+
+                p {
+                    font-family: "Roboto", sans-serif !important;
+                    font-size: 1.4rem;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;
+                    display: block;
+                    display: -webkit-box;
+                    color: $gray-dark-3;
+
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    display: block;
+                    display: -webkit-box;
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+                ul {
+                    padding-top: 2rem;
+                    @include mobile {
+                        padding: 0;
+                    }
+                    li {
+                        float: left;
+                        color: $violet-light-1;
+                        font-size: 1.6rem;
+
+                        a {
+                            color: $gray-dark-3;
+                            font-size: 1.6rem;
+                            &:hover {
+                                color: $violet-light-1;
+                            }
+                        }
+
+                        &:last-child {
+                            margin-left: 2rem;
+                            @include mobile {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

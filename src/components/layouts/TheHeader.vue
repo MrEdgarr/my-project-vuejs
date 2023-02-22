@@ -26,12 +26,20 @@
             </div>
             <div class="nav__right">
                 <!-- Search -->
-                <div @click="handleClick('search')">
-                    <button type="submit" class="searchMobile">
+                <div>
+                    <button
+                        type="submit"
+                        class="searchMobile"
+                        @click="handleClick('search')"
+                    >
                         <font-awesome-icon icon="fas fa-search" />
                     </button>
                     <div class="nav-search">
-                        <input type="text" placeholder="search" />
+                        <input
+                            type="text"
+                            placeholder="search"
+                            v-model="keySearch"
+                        />
                         <button type="submit">
                             <font-awesome-icon icon="fas fa-search" />
                         </button>
@@ -42,7 +50,7 @@
                     <span class="nav__user--userIcons">
                         <font-awesome-icon icon="fa-solid fa-user" />
                     </span>
-                    <ul :class="click_user ? 'showUser' : ''">
+                    <ul :class="click_User ? 'showUser' : ''">
                         <li>
                             <img
                                 src="https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
@@ -92,13 +100,19 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from "vuex"
-
+import _assign from "lodash/assign"
+import _map from "lodash/map"
+import _omit from "lodash/omit"
+import _debounce from "lodash/debounce"
 export default {
     computed: {
-        ...mapGetters(["click_Bars", "click_Search", "click_user"]),
+        ...mapGetters(["click_Bars", "click_Search", "click_User"]),
     },
     methods: {
         ...mapActions(["handleClick"]),
+    },
+    data() {
+        return {}
     },
 }
 </script>

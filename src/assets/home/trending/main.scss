@@ -2,7 +2,7 @@
 
 .trending {
     background-image: url("https://www.themoviedb.org/assets/2/v4/misc/trending-bg-39afc2a5f77e31d469b25c187814c0a2efef225494c038098d62317d923f8415.svg");
-    background-position: 50% 250px;
+    background-position: 50% 25rem;
     background-repeat: no-repeat;
     padding-bottom: 0;
 }
@@ -12,6 +12,10 @@
     justify-content: flex-start;
     align-items: center;
     align-content: center;
+    @include mobile {
+        display: block;
+        width: 250px;
+    }
     h2 {
         margin: 0;
         margin-right: 2rem;
@@ -24,9 +28,11 @@
         justify-content: flex-start;
         align-items: stretch;
         align-content: center;
-        border-radius: 30px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+        border-radius: 3rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0rem 0.3rem 0.8rem;
+        @include mobile {
+            margin-top: 2rem;
+        }
         .anchor {
             position: relative;
             top: 0;
@@ -42,7 +48,7 @@
                 align-items: center;
                 justify-content: center;
                 font-size: 1em;
-                padding: 5px 0px;
+                padding: 0.5rem 0;
                 margin-bottom: 0;
                 white-space: nowrap;
 
@@ -61,7 +67,7 @@
                 z-index: -1;
                 background: rgba(3, 37, 65, 1);
                 @include bg-gradient;
-                border-radius: 30px;
+                border-radius: 3rem;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -81,7 +87,7 @@
 
     &.isFading::after {
         content: "";
-        width: 100px;
+        width: 10rem;
         height: 100%;
         position: absolute;
         top: 0;
@@ -108,7 +114,7 @@
         min-height: 0;
         height: auto;
         width: 100%;
-        min-height: 355px;
+        min-height: 35.5rem;
         overflow-x: scroll;
         overflow-y: hidden;
         transition: height 0.5s linear;
@@ -116,12 +122,23 @@
         justify-content: flex-start;
         align-items: flex-start;
         align-content: flex-start;
-        padding-bottom: 20px;
+        padding-bottom: 2rem;
+
+        &::-webkit-scrollbar {
+            height: 1rem;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(219, 219, 219, 1);
+            border-radius: 2rem;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
 
         &_card {
-            width: 150px;
-            min-width: 150px;
-            margin-left: 20px;
+            width: 15rem;
+            min-width: 15rem;
+            margin-left: 2rem;
             background: transparent;
             border: none;
             box-shadow: none;
@@ -133,20 +150,20 @@
             display: flex;
             flex-wrap: wrap;
             align-content: flex-start;
-            border-radius: 8px;
+            border-radius: 0.8rem;
             overflow: hidden;
-            margin-top: 30px;
-            width: calc((100vw - 80px - 260px - (30px * 5)) / 5);
-            max-width: calc((1400px - 80px - 260px - (30px * 5)) / 5);
+            margin-top: 3rem;
+            width: calc((100vw - 8rem - 26rem - (3rem * 5)) / 5);
+            max-width: calc((140rem - 8rem - 26rem - (3rem * 5)) / 5);
             &:first-child {
                 margin-left: 0;
             }
             .image {
-                box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-                border-radius: 8px;
+                box-shadow: 0 0.2rem 0.8rem rgb(0 0 0 / 10%);
+                border-radius: 0.8rem;
                 width: 100%;
-                min-height: calc(150px * 1.5);
-                height: calc(150px * 1.5);
+                min-height: calc(15rem * 1.5);
+                height: calc(15rem * 1.5);
                 background: #dbdbdb;
                 overflow: hidden;
 
@@ -159,7 +176,7 @@
 
             .content {
                 width: 100%;
-                padding: 26px 10px 12px 10px;
+                padding: 2.6rem 1rem 1.2rem 1rem;
                 position: relative;
                 white-space: normal;
                 display: flex;
@@ -173,8 +190,11 @@
                     word-wrap: normal;
                     overflow-wrap: break-word;
                     a {
-                        font-weight: 700;
+                        font-weight: bold;
                         color: #000;
+                        &:hover {
+                            color: rgba(1, 180, 228, 1);
+                        }
                     }
                 }
                 p {
@@ -189,8 +209,8 @@
                     height: 3.5rem;
                     margin-right: 1rem;
                     position: absolute;
-                    top: -20px;
-                    left: 10px;
+                    top: -2rem;
+                    left: 1rem;
                     .progress-circular {
                         position: relative;
                         width: 100%;

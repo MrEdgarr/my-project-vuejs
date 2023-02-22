@@ -1,10 +1,40 @@
 @mixin bg-gradient {
-    background: linear-gradient(45deg, $blue-light-1, $blue-light-2, $violet-light-1, $violet-light-2);
+    background: linear-gradient(
+        45deg,
+        $blue-light-1,
+        $blue-light-2,
+        $violet-light-1,
+        $violet-light-2
+    );
 
-    background: -moz-linear-gradient(45deg, $blue-light-1, $blue-light-2, $violet-light-1, $violet-light-2);
-    background: -o-linear-gradient(45deg, $blue-light-1, $blue-light-2, $violet-light-1, $violet-light-2);
-    background: -ms-linear-gradient(45deg, $blue-light-1, $blue-light-2, $violet-light-1, $violet-light-2);
-    background: -webkit-linear-gradient(45deg, $blue-light-1, $blue-light-2, $violet-light-1, $violet-light-2);
+    background: -moz-linear-gradient(
+        45deg,
+        $blue-light-1,
+        $blue-light-2,
+        $violet-light-1,
+        $violet-light-2
+    );
+    background: -o-linear-gradient(
+        45deg,
+        $blue-light-1,
+        $blue-light-2,
+        $violet-light-1,
+        $violet-light-2
+    );
+    background: -ms-linear-gradient(
+        45deg,
+        $blue-light-1,
+        $blue-light-2,
+        $violet-light-1,
+        $violet-light-2
+    );
+    background: -webkit-linear-gradient(
+        45deg,
+        $blue-light-1,
+        $blue-light-2,
+        $violet-light-1,
+        $violet-light-2
+    );
 }
 
 @mixin border-radius {
@@ -54,9 +84,6 @@
     -ms-transform: translateX(-50%);
 }
 
-
-
-
 @mixin transition {
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s linear;
@@ -71,22 +98,20 @@
     align-items: center;
 }
 
-
-
 @mixin mobile {
-    @media screen and (max-width:520px) {
+    @media screen and (max-width: 520px) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media screen and (max-width:991px) {
+    @media screen and (max-width: 991px) {
         @content;
     }
 }
 
 @mixin laptop {
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width: 1200px) {
         @content;
     }
 }

@@ -79,7 +79,7 @@
     }
     &_bottom {
         display: flex;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
         padding-top: 0.5rem;
         @include tablet {
             flex-direction: column;
