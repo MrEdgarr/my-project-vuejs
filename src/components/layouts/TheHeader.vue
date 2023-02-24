@@ -46,8 +46,11 @@
                         <ListSearchNav />
                     </div>
                 </div>
-                <div class="nav__user" @click="handleClick('user')">
-                    <span class="nav__user--userIcons">
+                <div class="nav__user">
+                    <span
+                        class="nav__user--userIcons"
+                        @click="handleClick('user')"
+                    >
                         <font-awesome-icon icon="fa-solid fa-user" />
                     </span>
                     <ul :class="click_User ? 'showUser' : ''">

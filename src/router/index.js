@@ -12,6 +12,14 @@ const router = createRouter({
             },
         },
         {
+            path: "/movie",
+            name: "movie",
+            component: () => import("../views/movie-details/index.vue"),
+            meta: {
+                title: "The Movie",
+            },
+        },
+        {
             path: "/login",
             name: "login",
             component: () => import("../components/auth/Login.vue"),

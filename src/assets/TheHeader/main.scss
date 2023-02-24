@@ -44,9 +44,8 @@ header {
                 width: 100%;
                 height: auto;
                 margin-top: 0;
-                visibility: hidden;
-                opacity: 0;
-                transform: translateY(1rem);
+                transform-origin: top center;
+                transform: scale(1, 0);
                 @include transition;
 
                 li {
@@ -69,10 +68,7 @@ header {
 
             &.nav__menu--show {
                 @include tablet {
-                    margin-top: 0 !important;
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0rem);
+                    transform: scale(1);
 
                     a {
                         color: $black !important;
@@ -121,15 +117,13 @@ header {
                 border: $border-gray-1;
                 font-size: 1.6rem;
                 background: $white;
-                visibility: hidden;
-                opacity: 0;
-                transform: translateY(1rem);
+                transform-origin: top center;
+                transform: scale(1, 0);
                 @include border-radius;
                 @include transition;
 
                 @include mobile {
                     width: 100vw;
-                    // right: -7.7rem;
                     right: calc(100% - 11.5rem);
                     border-top-left-radius: 0;
                     border-top-right-radius: 0;
@@ -195,9 +189,7 @@ header {
             }
 
             .showUser {
-                visibility: visible;
-                opacity: 1;
-                transform: translateY(0rem);
+                transform: scale(1);
             }
         }
 
