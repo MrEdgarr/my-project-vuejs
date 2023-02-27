@@ -20,6 +20,15 @@ const router = createRouter({
             },
         },
         {
+            path: "/movie/seat-booking&:name&:id",
+            name: "booking",
+            component: () => import("../views/seat-booking/index.vue"),
+            meta: {
+                title: "The Movie",
+            },
+        },
+
+        {
             path: "/login",
             name: "login",
             component: () => import("../components/auth/Login.vue"),

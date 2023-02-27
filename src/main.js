@@ -15,7 +15,7 @@ import store from "./store/index"
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-import "./public/fontawesome"
+import "./plugins/fontawesome"
 
 const app = createApp(App)
 

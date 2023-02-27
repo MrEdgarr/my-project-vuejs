@@ -96,17 +96,109 @@
             <button type="submit">
                 <font-awesome-icon icon="fas fa-search" />
             </button>
-            <!-- <ListSearchNav /> -->
+            <div class="nav__search--list">
+                <div>
+                    <ul>
+                        <li class="list-item">
+                            <a href="#">
+                                <img
+                                    src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_QL75_UX100_CR0,0,100,148_.jpg"
+                                    alt=""
+                                />
+                                <div class="desc">
+                                    <h3>movie's name</h3>
+                                    <p>2022</p>
+                                    <p>Dakota Johnson, Sonoya Mizuno</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#">
+                                <img
+                                    src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_QL75_UX100_CR0,0,100,148_.jpg"
+                                    alt=""
+                                />
+                                <div class="desc">
+                                    <h3>movie's name</h3>
+                                    <p>2022</p>
+                                    <p>Dakota Johnson, Sonoya Mizuno</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#">
+                                <img
+                                    src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_QL75_UX100_CR0,0,100,148_.jpg"
+                                    alt=""
+                                />
+                                <div class="desc">
+                                    <h3>movie's name</h3>
+                                    <p>2022</p>
+                                    <p>Dakota Johnson, Sonoya Mizuno</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#">
+                                <img
+                                    src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_QL75_UX100_CR0,0,100,148_.jpg"
+                                    alt=""
+                                />
+                                <div class="desc">
+                                    <h3>movie's name</h3>
+                                    <p>2022</p>
+                                    <p>Dakota Johnson, Sonoya Mizuno</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#">
+                                <img
+                                    src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_QL75_UX100_CR0,0,100,148_.jpg"
+                                    alt=""
+                                />
+                                <div class="desc">
+                                    <h3>movie's name</h3>
+                                    <p>2022</p>
+                                    <p>Dakota Johnson, Sonoya Mizuno</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#">
+                                <img
+                                    src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_QL75_UX100_CR0,0,100,148_.jpg"
+                                    alt=""
+                                />
+                                <div class="desc">
+                                    <h3>movie's name</h3>
+                                    <p>2022</p>
+                                    <p>Dakota Johnson, Sonoya Mizuno</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-item">
+                            <a href="#">
+                                <img
+                                    src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_QL75_UX100_CR0,0,100,148_.jpg"
+                                    alt=""
+                                />
+                                <div class="desc">
+                                    <h3>movie's name</h3>
+                                    <p>2022</p>
+                                    <p>Dakota Johnson, Sonoya Mizuno</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import { mapActions, mapGetters, mapState } from "vuex"
-import _assign from "lodash/assign"
-import _map from "lodash/map"
-import _omit from "lodash/omit"
-import _debounce from "lodash/debounce"
 export default {
     computed: {
         ...mapGetters(["click_Bars", "click_Search", "click_User"]),

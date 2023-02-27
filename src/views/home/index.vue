@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import Slide from "./slide/index.vue"
-import Trending from "./trending/index.vue"
-import LatestTrailers from "./latest-trailers/index.vue"
-import Popular from "./popular/index.vue"
-import Blogs from "./blogs/index.vue"
-import Promotion from "./promotion/index.vue"
+import Slide from "../../components/home/slide/index.vue"
+import Trending from "../../components/home/trending/index.vue"
+import LatestTrailers from "../../components/home/latest-trailers/index.vue"
+import Popular from "../../components/home/popular/index.vue"
+import Blogs from "../../components/home/blogs/index.vue"
+import Promotion from "../../components/home/promotion/index.vue"
 export default {
     components: {
         Slide,
