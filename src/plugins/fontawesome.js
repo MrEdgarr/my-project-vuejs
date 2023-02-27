@@ -18,6 +18,8 @@ import {
     faArrowRightFromBracket,
     faPlay,
     faClock,
+    faAngleLeft,
+    faAngleRight,
 } from "@fortawesome/free-solid-svg-icons"
 
 import {
@@ -55,5 +57,7 @@ library.add(
     faSquareGithub,
     faYoutube,
     faPlay,
-    faClock
+    faClock,
+    faAngleLeft,
+    faAngleRight
 )

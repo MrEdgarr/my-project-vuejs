@@ -56,7 +56,15 @@
                                     class="type_time"
                                     v-bind="hadleShowTimes(index)"
                                 >
-                                    <router-link>
+                                    <router-link
+                                        :to="{
+                                            name: 'booking',
+                                            params: {
+                                                id: value.id,
+                                                name: value.name,
+                                            },
+                                        }"
+                                    >
                                         <p
                                             v-for="(item, index) in newTimes"
                                             :key="index"

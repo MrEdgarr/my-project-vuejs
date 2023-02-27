@@ -53,14 +53,6 @@ export default {
             detail: DETAIL,
         }
     },
-    mounted() {
-        console.log(DETAIL)
-    },
-    methods: {
-        handleHover(item) {
-            console.log(item)
-        },
-    },
 }
 </script>
 
