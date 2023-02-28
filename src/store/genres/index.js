@@ -10,7 +10,7 @@ const mutations = {
     },
 }
 const actions = {
-    async fetchAll({ commit }) {
+    async fetchGenres({ commit }) {
         try {
             const { data } = await AuthServices.getGenres()
             commit("SET_GENRES", data)

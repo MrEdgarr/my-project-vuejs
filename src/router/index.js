@@ -10,6 +10,13 @@ const router = createRouter({
             meta: {
                 title: "The Movie",
             },
+            children: [
+                {
+                    path: "play/:id",
+                    name: 'trailers.play',
+                    component: () => import("../components/trailers/index.vue"),
+                },
+            ],
         },
         {
             path: "/movie",

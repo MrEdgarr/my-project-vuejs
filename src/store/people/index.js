@@ -10,7 +10,7 @@ const mutations = {
     },
 }
 const actions = {
-    async people({ commit }, { peopleId }) {
+    async fetchPeople({ commit }, { peopleId }) {
         try {
             const { data } = await AuthServices.getPeople(peopleId)
             commit("SET_PEOPLE", data)

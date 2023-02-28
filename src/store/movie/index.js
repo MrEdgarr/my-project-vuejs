@@ -3,19 +3,20 @@ const state = {
     detail: [],
     videos: [],
 }
-const getters = {}
+const getters = {
+    detail: (state) => state.detail,
+    videos: (state) => state.videos,
+}
 const mutations = {
     SET_MOVIE_DETAIL(state, payload) {
         state.detail = payload
-        console.log(payload)
     },
     SET_VIDEOS(state, payload) {
         state.videos = payload
-        console.log(payload)
     },
 }
 const actions = {
-    async movieDetail({ commit }, movieId) {
+    async fetchMovieDetail({ commit }, { movieId }) {
         try {
             const { data } = await AuthServices.getMovieDetai(movieId)
             commit("SET_MOVIE_DETAIL", data)
@@ -23,13 +24,17 @@ const actions = {
             console.log(error)
         }
     },
-    async videos({ commit }, movieId) {
+    async videos({ commit }, { movieId }) {
         try {
             const { data } = await AuthServices.getVideos(movieId)
             const newdata = data.results.filter(
                 (item) => item.name == "Official Trailer"
             )
-            commit("SET_VIDEOS", newdata)
+            if (newdata) {
+                commit("SET_VIDEOS", newdata[0])
+            } else {
+                commit("SET_VIDEOS", [])
+            }
         } catch (error) {
             console.log(error)
         }

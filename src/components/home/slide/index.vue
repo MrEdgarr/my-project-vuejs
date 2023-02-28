@@ -8,6 +8,7 @@
         :modules="modules"
         :loop="true"
         speed="1500"
+        :autoHeight="true"
         :autoplay="{
             speed: 2000,
             disableOnInteractions: false,
@@ -23,7 +24,7 @@
         </div>
         <swiper-slide
             class="parallax-slide"
-            v-for="image in images"
+            v-for="image in newUpcoming"
             :key="image.id"
         >
             <div
@@ -31,7 +32,13 @@
                 :data-swiper-parallax="parallaxAmount"
                 :data-swiper-parallax-opacity="0.5"
             >
-                <img :src="image.imageUrl" />
+                <img
+                    :src="getPostBackdropPath(image.backdrop_path)"
+                    :alt="image.title"
+                />
+                <div class="icon-play">
+                    <font-awesome-icon icon="fa-solid fa-play" />
+                </div>
             </div>
         </swiper-slide>
     </swiper>
@@ -44,6 +51,12 @@ import { Parallax, Autoplay, Navigation } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/vue"
 
 export default {
+    props: {
+        upcoming: {
+            type: Array,
+            required: true,
+        },
+    },
     components: {
         Swiper,
         SwiperSlide,
@@ -55,28 +68,7 @@ export default {
         return {
             modules: [Parallax, Autoplay, Navigation],
             parallaxSwiperWidth: 0,
-            images: [
-                {
-                    id: 1,
-                    imageUrl:
-                        "https://images.unsplash.com/photo-1552176625-e47ff529b595?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
-                },
-                {
-                    id: 2,
-                    imageUrl:
-                        "https://images.unsplash.com/photo-1530906358829-e84b2769270f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80",
-                },
-                {
-                    id: 3,
-                    imageUrl:
-                        "https://images.unsplash.com/photo-1535448580089-c7f9490c78b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1921&q=80",
-                },
-                {
-                    id: 4,
-                    imageUrl:
-                        "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-                },
-            ],
+            newUpcoming: [],
         }
     },
     computed: {
@@ -92,6 +84,14 @@ export default {
         onSwiperInitialized(swiper) {
             this.parallaxSwiperWidth = swiper.width
         },
+        getPostBackdropPath(posterPath) {
+            return `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces${posterPath}`
+        },
+    },
+    updated() {
+        if (this.upcoming.length > 0) {
+            this.newUpcoming = this.upcoming.slice(0, 2)
+        }
     },
 }
 </script>

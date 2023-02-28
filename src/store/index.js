@@ -1,9 +1,11 @@
 import { createStore, createLogger } from "vuex"
 import Click_Header from "./theHeader/header"
-import Genres from "./genres/index"
-import Movie from "./movie/index"
-import Trending from "./trending/index"
-import People from "./people/index"
+import Genres from "./genres"
+import Movie from "./movie"
+import Trending from "./trending"
+import People from "./people"
+import Upcoming from "./upcoming"
+import Popular from "./popular"
 export default createStore({
     modules: {
         Click_Header,
@@ -11,5 +13,7 @@ export default createStore({
         Movie,
         Trending,
         People,
+        Upcoming,
+        Popular,
     },
 })

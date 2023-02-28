@@ -7,7 +7,7 @@
             <div class="column_content" @scroll.passive="onScroll">
                 <div
                     class="column_content_card"
-                    v-for="item in data"
+                    v-for="item in popular"
                     :key="item.id"
                 >
                     <div class="image">
@@ -47,6 +47,12 @@
 <script>
 import { DATA } from "../../../constants/data"
 export default {
+    props: {
+        popular: {
+            type: Array,
+            required: true,
+        },
+    },
     data() {
         return {
             data: DATA[0].results,

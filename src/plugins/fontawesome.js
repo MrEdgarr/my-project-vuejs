@@ -20,6 +20,7 @@ import {
     faClock,
     faAngleLeft,
     faAngleRight,
+    faXmark,
 } from "@fortawesome/free-solid-svg-icons"
 
 import {
@@ -59,5 +60,7 @@ library.add(
     faPlay,
     faClock,
     faAngleLeft,
-    faAngleRight
+    faAngleRight,
+    faPlay,
+    faXmark
 )

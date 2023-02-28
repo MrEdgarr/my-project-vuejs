@@ -3,7 +3,7 @@
         <div class="trending_tab">
             <h2>Trending</h2>
             <div class="selector_wrap">
-                <div class="selector" @click="handle_Click_Toggle">
+                <div class="selector" @click.prevent="handle_Click_Toggle">
                     <div class="anchor">
                         <h3>
                             <a
@@ -30,15 +30,12 @@
             <div class="column_content" @scroll.passive="onScroll">
                 <div
                     class="column_content_card"
-                    v-for="item in data"
+                    v-for="item in trending"
                     :key="item.id"
                 >
                     <div class="image">
                         <a href="">
-                            <img
-                                :src="getPosterURL(item.backdrop_path)"
-                                alt=""
-                            />
+                            <img :src="getPosterURL(item.poster_path)" alt="" />
                         </a>
                     </div>
                     <div class="content">
@@ -70,6 +67,12 @@
 <script>
 import { DATA } from "../../../constants/data"
 export default {
+    props: {
+        trending: {
+            type: Array,
+            required: true,
+        },
+    },
     data() {
         return {
             toggle: true,
@@ -79,15 +82,16 @@ export default {
     },
     methods: {
         handle_Click_Toggle(e) {
-            e.preventDefault()
             const dataSet = e.target.getAttribute("data-selected")
             if (dataSet == 1) {
                 this.$refs.bgbtn.style.left = `0px`
                 this.toggle = true
+                this.$emit("updateTimes", "day")
             }
             if (dataSet == 2) {
                 this.$refs.bgbtn.style.left = `125px`
                 this.toggle = false
+                this.$emit("updateTimes", "week")
             }
         },
 
@@ -98,7 +102,7 @@ export default {
             var today = new Date(dateTime)
             this.getYears = today.getFullYear()
             return today.toLocaleDateString()
-        },  
+        },
         handleChart(chart) {
             let base = 10 ** 1
             this.voteFormart = Math.round(chart * base)
