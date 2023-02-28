@@ -213,5 +213,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/TheHeader/main.scss";
+@import "../../assets/the-header/main.scss";
 </style>

@@ -147,5 +147,5 @@ export default {}
 </script>
 
 <style lang="scss">
-@import "../../assets/TheFooter/main.scss";
+@import "../../assets/the-footer/main.scss";
 </style>
